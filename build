@@ -1,0 +1,9 @@
+#!/bin/bash
+
+docker build docker/ -t shoppinglistbackend:latest
+
+docker stop ShoppingListBackend && docker rm ShoppingListBackend
+
+docker-compose -f shoppinglistbackend-compose.yml up -d
+
+docker logs ShoppingListBackend
